@@ -1,5 +1,5 @@
 AWS Cross-Region VPC Peering Project
-📌 Problem Statement
+📌 Problem Statement :
 In a real-world scenario, applications are often deployed across multiple AWS regions. Secure communication between these regions is required without exposing resources to the internet.
 This project demonstrates how to securely access a private EC2 instance in one region (Virginia) from another region (Singapore) using VPC Peering, without using Internet Gateway or NAT Gateway.
 ________________________________________
