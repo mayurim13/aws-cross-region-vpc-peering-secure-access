@@ -1,5 +1,5 @@
 AWS Cross-Region VPC Peering Project
-📌 Problem Statement :
+📌 Problem Statement
 In a real-world scenario, applications are often deployed across multiple AWS regions. Secure communication between these regions is required without exposing resources to the internet.
 This project demonstrates how to securely access a private EC2 instance in one region (Virginia) from another region (Singapore) using VPC Peering, without using Internet Gateway or NAT Gateway.
 ________________________________________
@@ -7,7 +7,7 @@ ________________________________________
 •	Singapore Region:
 o	One VPC with:
 	Public subnet (Bastion Host)
-	Private subnet (Private EC2)
+	Private subnets (Private EC2)
 •	Virginia Region:
 o	One VPC with:
 	Two private subnets
@@ -19,9 +19,11 @@ o	Route tables updated for cross-VPC communication
 o	Security groups configured for restricted access
 ________________________________________
 📊 Architecture Diagram :
-(Add your diagram here)
+
+![Architecture Diagram](screenshots/Architecture.png)
+
 ________________________________________
-⚙️ Components Used
+⚙️ Components Used :
 •	Amazon VPC (2 regions)
 •	Public and Private Subnets
 •	EC2 Instances (Bastion + Private)
@@ -32,23 +34,52 @@ ________________________________________
 ________________________________________
 🔧 Step-by-Step Implementation :
 1. Created VPC in Singapore
+
+![VPC](screenshots/Singapore-VPC.png)
  
 2. Created Public and Private Subnets
+
+![Subnet](screenshots/Singapore-VPC-PrivateSN-1.png)
+
+![Subnet](screenshots/Singapore-VPC-PublicSN.png)
  
 3. Launched Bastion Host (Public EC2)
+
+![EC2](screenshots/Singapore-Bastion-Instance.png)
  
 4. Launched Private EC2 in Singapore
+
+![EC2](screenshots/Singapore-PrivateServer-Instance.png)
+
  
 5. Created VPC in Virginia
+
+![VPC](screenshots/Virginia-VPC.png)
  
-6. Launched Private Instances in Virginia (A & B)
+6. Launched Private Instances in Virginia (A & B) :
+
+![EC2](screenshots/Virginia-Instance-A.png)
+
+![EC2](screenshots/Virginia-Instance-B.png)
+
  
-7. Created VPC Peering Connection
+7. Created VPC Peering Connection 
+
+![VPC-Peering](screenshots/Singapore-VPC-Peering.png)
  
-8. Updated Route Tables in Both VPCs
+8. Updated Route Tables in Both VPCs 
+
+![Route-Table](screenshots/Singapore-RT.png)
+
+![Route-Table](screenshots/Virginia-RT.png)
+
  
-9. Configured Security Groups
+9. Configured Security Groups 
 •	Allowed SSH access only from Singapore private instance to Virginia instance A
+
+![Security-Group](screenshots/Virginia-Instance-A-SG.png)
+
+
  
 ________________________________________
 🔐 Security Design :
@@ -74,7 +105,8 @@ Step 4: Validate Restricted Access
 •	Verified that only Singapore private instance can access Virginia instance A
 •	Other instances are restricted via Security Groups
 Output Proof
-(Add screenshot showing successful SSH connection to Virginia instance A)
+
+![Output](screenshots/Final.png)
 ________________________________________
 💡 Key Learnings :
 •	Learned cross-region VPC peering setup
