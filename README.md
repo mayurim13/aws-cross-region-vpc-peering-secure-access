@@ -104,7 +104,6 @@ Step 3: Access Virginia Instance A
 Step 4: Validate Restricted Access
 •	Verified that only Singapore private instance can access Virginia instance A
 •	Other instances are restricted via Security Groups
-Output Proof
 
 ![Output](screenshots/Final.png)
 ________________________________________
