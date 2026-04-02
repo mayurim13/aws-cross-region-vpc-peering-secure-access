@@ -1,9 +1,9 @@
 AWS Cross-Region VPC Peering Project
-📌 Problem Statement
+📌 Problem Statement :
 In a real-world scenario, applications are often deployed across multiple AWS regions. Secure communication between these regions is required without exposing resources to the internet.
 This project demonstrates how to securely access a private EC2 instance in one region (Virginia) from another region (Singapore) using VPC Peering, without using Internet Gateway or NAT Gateway.
 ________________________________________
-🏗️ Architecture Overview
+🏗️ Architecture Overview :
 •	Singapore Region:
 o	One VPC with:
 	Public subnet (Bastion Host)
@@ -18,7 +18,7 @@ o	VPC Peering established between Singapore and Virginia VPCs
 o	Route tables updated for cross-VPC communication
 o	Security groups configured for restricted access
 ________________________________________
-📊 Architecture Diagram
+📊 Architecture Diagram :
 (Add your diagram here)
 ________________________________________
 ⚙️ Components Used
@@ -30,7 +30,7 @@ ________________________________________
 •	Security Groups
 •	PuTTY (SSH access)
 ________________________________________
-🔧 Step-by-Step Implementation
+🔧 Step-by-Step Implementation :
 1. Created VPC in Singapore
  
 2. Created Public and Private Subnets
@@ -51,19 +51,19 @@ ________________________________________
 •	Allowed SSH access only from Singapore private instance to Virginia instance A
  
 ________________________________________
-🔐 Security Design
+🔐 Security Design :
 •	Virginia instances do not have public IPs
 •	No Internet Gateway or NAT Gateway in Virginia VPC
 •	Access is restricted using Security Groups
 •	Only Singapore private instance can access Virginia instance A
 •	Bastion host is used for controlled access
 ________________________________________
-💰 Cost Optimization
+💰 Cost Optimization :
 •	No NAT Gateway used in Virginia VPC
 •	Private architecture reduces unnecessary internet traffic
 •	Efficient use of AWS internal networking
 ________________________________________
-🧪 Verification Steps
+🧪 Verification Steps :
 Step 1: Connect to Bastion Host
 •	Used PuTTY to SSH into Bastion Host (Singapore public EC2)
 Step 2: Connect to Singapore Private EC2
@@ -76,12 +76,12 @@ Step 4: Validate Restricted Access
 Output Proof
 (Add screenshot showing successful SSH connection to Virginia instance A)
 ________________________________________
-💡 Key Learnings
+💡 Key Learnings :
 •	Learned cross-region VPC peering setup
 •	Understood routing between multiple VPCs
 •	Implemented secure private communication without internet
 •	Gained knowledge of bastion host architecture
 •	Applied security group restrictions for controlled access
 ________________________________________
-🚀 Conclusion
+🚀 Conclusion :
 This project demonstrates secure cross-region communication using VPC Peering. It ensures that private resources remain isolated while still being accessible in a controlled and secure manner.
